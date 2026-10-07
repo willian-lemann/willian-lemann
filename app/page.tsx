@@ -23,7 +23,7 @@ export default function Home() {
           }
         });
       },
-      { threshold: 0.3, rootMargin: "0px 0px -20% 0px" },
+      { threshold: 0.1, rootMargin: "0px 0px -20% 0px" },
     );
 
     sectionsRef.current.forEach((section) => {
@@ -187,8 +187,8 @@ export default function Home() {
                       </h3>
                       <div className="text-muted-foreground">{job.company}</div>
                     </div>
-                    <p className="text-muted-foreground leading-relaxed max-w-lg">
-                      {job.description}
+                    <p className="text-muted-foreground leading-relaxed max-w-lg whitespace-pre-line">
+                      {job.description.trim()}
                     </p>
                   </div>
 
