@@ -122,6 +122,21 @@
 }
 
 @layer utilities {
+  /* Content is visible by default (crawlers, no-JS, AI bots); it is only
+     hidden for the reveal animation once the inline script adds `.js`. */
+  .js .reveal:not(.animate-fade-in-up) {
+    opacity: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .js .reveal:not(.animate-fade-in-up) {
+      opacity: 1;
+    }
+    .animate-fade-in-up {
+      animation: none;
+    }
+  }
+
   .animate-fade-in-up {
     animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }

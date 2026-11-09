@@ -6,11 +6,11 @@ export const YEARS_OF_EXPERIENCE = CURRENT_YEAR - START_WORK_YEAR;
 
 export const page: PageContent = {
   hero: {
-    label: `PORTFOLIO / ${CURRENT_YEAR}`,
+    label: `SENIOR FRONTEND ENGINEER / ${CURRENT_YEAR}`,
     title1: "Willian",
-    title2: "Leman",
+    title2: "Lemann",
     description:
-      "I am a Software Engineer - Heavy Frontend, and I am really passionate with build creative things, build cool apps is my addiction, I work with ",
+      "I'm a Senior Frontend Engineer from Brazil, passionate about building creative products — building cool apps is my addiction. I work with ",
     descriptionHighlight1: "React",
     descriptionHighlight2: "Golang",
     descriptionHighlight3: "Node.",
@@ -19,7 +19,7 @@ export const page: PageContent = {
   },
   locale: "Brazil",
   currently: {
-    role: "Frontend Developer",
+    role: "Senior Frontend Engineer",
     company: "@ Nortal - GeomagicalLabs",
     period: "2026 — Present",
   },
@@ -173,11 +173,11 @@ Other tools:  Bitbucket, Kanban and Jira Atlassian.`,
     ],
   },
   footer: {
-    copyright: `© ${CURRENT_YEAR} Willian Leman. All rights reserved.`,
-    builtWith: "Built with Love by Willian Leman",
+    copyright: `© ${CURRENT_YEAR} Willian Lemann. All rights reserved.`,
+    builtWith: "Built with love by Willian Lemann",
   },
   whatsapp: {
     number: "5548991380360",
-    label: "Contrate-me",
+    label: "Hire me",
   },
 };

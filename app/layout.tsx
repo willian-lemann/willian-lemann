@@ -1,8 +1,10 @@
 import type React from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
-import { YEARS_OF_EXPERIENCE } from "@/lib/constants";
+import { ThemeProvider } from "@/components/theme-provider";
+import { site } from "@/lib/site";
+import { buildJsonLd } from "@/lib/structured-data";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -11,9 +13,63 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Willian Lemann - Software Engineer - Heavy Frontend",
-  description: `Software Engineer with heavy skills for Frontend and AI integrations from Brazil with ${YEARS_OF_EXPERIENCE} years of experience.`,
-  generator: "v0.app",
+  metadataBase: new URL(site.url),
+  title: {
+    default: site.title,
+    template: `%s | ${site.name}`,
+  },
+  description: site.description,
+  applicationName: site.name,
+  authors: [{ name: site.name, url: site.url }],
+  creator: site.name,
+  publisher: site.name,
+  keywords: [
+    site.name,
+    "Senior Frontend Engineer",
+    "Frontend Developer Brazil",
+    "React Developer",
+    "TypeScript Developer",
+    "Next.js Developer",
+    "AI integrations",
+    "Remote Software Engineer",
+  ],
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "profile",
+    url: "/",
+    siteName: site.name,
+    title: site.title,
+    description: site.description,
+    locale: site.locale,
+    firstName: site.givenName,
+    lastName: site.familyName,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.title,
+    description: site.description,
+    creator: site.twitter,
+    site: site.twitter,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  category: "technology",
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
+  ],
 };
 
 export default function RootLayout({
@@ -22,8 +78,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geist.variable}`}>
-      <body className="font-sans antialiased">{children}</body>
+    <html lang="en" className={geist.variable} suppressHydrationWarning>
+      <head>
+        {/* Marks JS as available so reveal animations only hide content when they can run. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js')",
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(buildJsonLd()).replace(/</g, "\\u003c"),
+          }}
+        />
+      </head>
+      <body className="font-sans antialiased">
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
