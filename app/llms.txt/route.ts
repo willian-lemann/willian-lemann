@@ -15,6 +15,10 @@ export function GET() {
     )
     .join("\n\n");
 
+  const faq = page.faq.items
+    .map((item) => `### ${item.question}\n\n${item.answer}`)
+    .join("\n\n");
+
   const socials = page.connect.socials
     .map((s) => `- [${s.name}](${s.url}): ${s.handle}`)
     .join("\n");
@@ -34,9 +38,17 @@ export function GET() {
 - Availability: ${page.hero.isAvailable ? "Available for new opportunities" : "Not currently available"}
 - Contact: ${site.email}
 
+## About
+
+${page.about.paragraphs.join("\n\n")}
+
 ## Experience
 
 ${jobs}
+
+## FAQ
+
+${faq}
 
 ## Links
 

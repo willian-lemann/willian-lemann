@@ -17,6 +17,44 @@ export const page: PageContent = {
     availability: "Available for work",
     isAvailable: true,
   },
+  about: {
+    title: "About",
+    paragraphs: [
+      `I'm Willian Lemann, a Senior Frontend Engineer based in Brazil with ${YEARS_OF_EXPERIENCE}+ years of experience building web applications with React, TypeScript and Next.js.`,
+      "I currently work at Nortal for Geomagical Labs, an IKEA company headquartered in San Francisco, building product experiences guided by product analytics (Mixpanel) to improve activation and conversion.",
+      "Before that, at Spocket I worked on the main dropshipping app, Shopify apps and Core Web Vitals for checkout and data-heavy pages. At Vanhack I helped migrate a legacy React + Webpack platform to Next.js with SSR and ISR. At Viaflow I worked fullstack on fintech and government projects with React, React Native, Node.js and .NET.",
+      "Beyond the frontend, I build AI automations and LLM integrations, and fullstack products with Node.js (AdonisJS), Golang and dockerized Next.js.",
+    ],
+  },
+  faq: {
+    title: "FAQ",
+    items: [
+      {
+        question: "Who is Willian Lemann?",
+        answer: `Willian Lemann is a Senior Frontend Engineer from Brazil with ${YEARS_OF_EXPERIENCE}+ years of experience, specialized in React, TypeScript and Next.js, with fullstack experience in Node.js and Golang and a focus on AI integrations and product analytics.`,
+      },
+      {
+        question: "What is Willian Lemann's tech stack?",
+        answer:
+          "Frontend: React, TypeScript, JavaScript, Next.js, Remix, Astro and Gatsby. Backend: Node.js, AdonisJS and Golang. Also Docker, Shopify apps, Mixpanel and AI/LLM integrations.",
+      },
+      {
+        question: "Where is Willian Lemann currently working?",
+        answer:
+          "He is a Senior Frontend Engineer at Nortal, working for Geomagical Labs, a company under the IKEA umbrella based in San Francisco, California.",
+      },
+      {
+        question: "Is Willian Lemann available for remote work?",
+        answer:
+          "Yes. Willian is based in Brazil (UTC−3) and has worked with international companies such as Geomagical Labs, Spocket and Vanhack. He is open to new remote opportunities and freelance projects.",
+      },
+      {
+        question: "How can I contact Willian Lemann?",
+        answer:
+          "By email at willianleman@gmail.com, through WhatsApp using the \"Hire me\" button on this page, or on LinkedIn at linkedin.com/in/willian-lemann.",
+      },
+    ],
+  },
   locale: "Brazil",
   currently: {
     role: "Senior Frontend Engineer",

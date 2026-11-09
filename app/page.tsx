@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useEffect, useRef, useState } from "react";
 
+const SECTIONS = ["intro", "about", "work", "faq", "connect"] as const;
+
 export default function Home() {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -34,6 +36,10 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
+  const registerSection = (id: (typeof SECTIONS)[number]) => (el: HTMLElement | null) => {
+    if (el) sectionsRef.current[SECTIONS.indexOf(id)] = el;
+  };
+
   const toggleTheme = () => {
     setTheme(isDark ? "light" : "dark");
   };
@@ -42,7 +48,7 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground relative">
       <nav className="fixed left-8 top-1/2 -translate-y-1/2 z-10 hidden lg:block">
         <div className="flex flex-col gap-4">
-          {["intro", "work", "connect"].map((section) => (
+          {SECTIONS.map((section) => (
             <button
               key={section}
               onClick={() =>
@@ -64,11 +70,7 @@ export default function Home() {
       <main className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-16">
         <header
           id="intro"
-          ref={(el) => {
-            if (el) {
-              sectionsRef.current[0] = el;
-            }
-          }}
+          ref={registerSection("intro")}
           className="reveal min-h-screen flex items-center"
         >
           <div className="grid lg:grid-cols-5 gap-12 sm:gap-16 w-full">
@@ -151,12 +153,38 @@ export default function Home() {
         </header>
 
         <section
+          id="about"
+          ref={registerSection("about")}
+          aria-labelledby="about-title"
+          className="reveal py-20 sm:py-32"
+        >
+          <div className="grid lg:grid-cols-12 gap-8 sm:gap-12">
+            <h2
+              id="about-title"
+              className="lg:col-span-4 text-3xl sm:text-4xl font-light"
+            >
+              {page.about.title}
+            </h2>
+            <div className="lg:col-span-8 space-y-6">
+              {page.about.paragraphs.map((paragraph, index) => (
+                <p
+                  key={index}
+                  className={
+                    index === 0
+                      ? "text-lg sm:text-xl text-foreground leading-relaxed"
+                      : "text-muted-foreground leading-relaxed"
+                  }
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section
           id="work"
-          ref={(el) => {
-            if (el) {
-              sectionsRef.current[1] = el;
-            }
-          }}
+          ref={registerSection("work")}
           className="reveal min-h-screen py-20 sm:py-32"
         >
           <div className="space-y-12 sm:space-y-16">
@@ -268,12 +296,43 @@ export default function Home() {
         </section> */}
 
         <section
+          id="faq"
+          ref={registerSection("faq")}
+          aria-labelledby="faq-title"
+          className="reveal py-20 sm:py-32"
+        >
+          <div className="space-y-12 sm:space-y-16">
+            <h2 id="faq-title" className="text-3xl sm:text-4xl font-light">
+              {page.faq.title}
+            </h2>
+
+            <div className="border-t border-border/50">
+              {page.faq.items.map((item) => (
+                <details
+                  key={item.question}
+                  className="group border-b border-border/50 py-6 hover:border-border transition-colors duration-500"
+                >
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-lg sm:text-xl font-medium [&::-webkit-details-marker]:hidden">
+                    <h3>{item.question}</h3>
+                    <span
+                      aria-hidden="true"
+                      className="text-2xl font-light text-muted-foreground transition-transform duration-300 group-open:rotate-45"
+                    >
+                      +
+                    </span>
+                  </summary>
+                  <p className="mt-4 max-w-2xl text-muted-foreground leading-relaxed">
+                    {item.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section
           id="connect"
-          ref={(el) => {
-            if (el) {
-              sectionsRef.current[3] = el;
-            }
-          }}
+          ref={registerSection("connect")}
           className="reveal py-20 sm:py-32"
         >
           <div className="grid lg:grid-cols-2 gap-12 sm:gap-16">

@@ -38,8 +38,21 @@ export type Social = {
   url: string;
 };
 
+export type FaqItem = {
+  question: string;
+  answer: string;
+};
+
 export type PageContent = {
   hero: Hero;
+  about: {
+    title: string;
+    paragraphs: string[];
+  };
+  faq: {
+    title: string;
+    items: FaqItem[];
+  };
   locale: string;
   currently: CurrentPosition;
   focus: string[];

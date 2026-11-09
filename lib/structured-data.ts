@@ -63,6 +63,18 @@ export function buildJsonLd() {
           ).join(", "),
         },
       },
+      {
+        "@type": "FAQPage",
+        "@id": `${site.url}/#faq`,
+        url: `${site.url}/#faq`,
+        isPartOf: { "@id": `${site.url}/#website` },
+        about: { "@id": personId },
+        mainEntity: page.faq.items.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: { "@type": "Answer", text: item.answer },
+        })),
+      },
     ],
   };
 }
