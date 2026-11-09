@@ -24,22 +24,27 @@ export type Job = {
   tech: string[];
 };
 
-export type Post = {
-  title: string;
-  excerpt: string;
-  date: string;
-  readTime: string;
-  url: string;
-};
-
 export type Social = {
   name: string;
   handle: string;
   url: string;
 };
 
+export type FaqItem = {
+  question: string;
+  answer: string;
+};
+
 export type PageContent = {
   hero: Hero;
+  about: {
+    title: string;
+    paragraphs: string[];
+  };
+  faq: {
+    title: string;
+    items: FaqItem[];
+  };
   locale: string;
   currently: CurrentPosition;
   focus: string[];
@@ -50,7 +55,6 @@ export type PageContent = {
   };
   thoughts: {
     title: string;
-    posts: Post[];
   };
   connect: {
     title: string;

@@ -6,20 +6,58 @@ export const YEARS_OF_EXPERIENCE = CURRENT_YEAR - START_WORK_YEAR;
 
 export const page: PageContent = {
   hero: {
-    label: `PORTFOLIO / ${CURRENT_YEAR}`,
+    label: `SENIOR FRONTEND ENGINEER / ${CURRENT_YEAR}`,
     title1: "Willian",
-    title2: "Leman",
+    title2: "Lemann",
     description:
-      "I am a Software Engineer - Heavy Frontend, and I am really passionate with build creative things, build cool apps is my addiction, I work with ",
+      "I'm a Senior Frontend Engineer from Brazil, passionate about building creative products — building cool apps is my addiction. I work with ",
     descriptionHighlight1: "React",
     descriptionHighlight2: "Golang",
     descriptionHighlight3: "Node.",
     availability: "Available for work",
     isAvailable: true,
   },
+  about: {
+    title: "About",
+    paragraphs: [
+      `I'm Willian Lemann, a Senior Frontend Engineer based in Brazil with ${YEARS_OF_EXPERIENCE}+ years of experience building web applications with React, TypeScript and Next.js.`,
+      "I currently work at Nortal for Geomagical Labs, an IKEA company headquartered in San Francisco, building product experiences guided by product analytics (Mixpanel) to improve activation and conversion.",
+      "Before that, at Spocket I worked on the main dropshipping app, Shopify apps and Core Web Vitals for checkout and data-heavy pages. At Vanhack I helped migrate a legacy React + Webpack platform to Next.js with SSR and ISR. At Viaflow I worked fullstack on fintech and government projects with React, React Native, Node.js and .NET.",
+      "Beyond the frontend, I build AI automations and LLM integrations, and fullstack products with Node.js (AdonisJS), Golang and dockerized Next.js.",
+    ],
+  },
+  faq: {
+    title: "FAQ",
+    items: [
+      {
+        question: "Who is Willian Lemann?",
+        answer: `Willian Lemann is a Senior Frontend Engineer from Brazil with ${YEARS_OF_EXPERIENCE}+ years of experience, specialized in React, TypeScript and Next.js, with fullstack experience in Node.js and Golang and a focus on AI integrations and product analytics.`,
+      },
+      {
+        question: "What is Willian Lemann's tech stack?",
+        answer:
+          "Frontend: React, TypeScript, JavaScript, Next.js, Remix, Astro and Gatsby. Backend: Node.js, AdonisJS and Golang. Also Docker, Shopify apps, Mixpanel and AI/LLM integrations.",
+      },
+      {
+        question: "Where is Willian Lemann currently working?",
+        answer:
+          "He is a Senior Frontend Engineer at Nortal, working for Geomagical Labs, a company under the IKEA umbrella based in San Francisco, California.",
+      },
+      {
+        question: "Is Willian Lemann available for remote work?",
+        answer:
+          "Yes. Willian is based in Brazil (UTC−3) and has worked with international companies such as Geomagical Labs, Spocket and Vanhack. He is open to new remote opportunities and freelance projects.",
+      },
+      {
+        question: "How can I contact Willian Lemann?",
+        answer:
+          "By email at willianleman@gmail.com, through WhatsApp using the \"Hire me\" button on this page, or on LinkedIn at linkedin.com/in/willian-lemann.",
+      },
+    ],
+  },
   locale: "Brazil",
   currently: {
-    role: "Frontend Developer",
+    role: "Senior Frontend Engineer",
     company: "@ Nortal - GeomagicalLabs",
     period: "2026 — Present",
   },
@@ -109,40 +147,6 @@ Other tools:  Bitbucket, Kanban and Jira Atlassian.`,
   },
   thoughts: {
     title: "Recent Thoughts",
-    posts: [
-      {
-        title: "The Future of Web Development",
-        excerpt:
-          "Exploring how AI and automation are reshaping the way we build for the web.",
-        date: "Dec 2024",
-        readTime: "5 min",
-        url: "#",
-      },
-      {
-        title: "Design Systems at Scale",
-        excerpt:
-          "Lessons learned from building and maintaining design systems across multiple products.",
-        date: "Nov 2024",
-        readTime: "8 min",
-        url: "#",
-      },
-      {
-        title: "Performance-First Development",
-        excerpt:
-          "Why performance should be a first-class citizen in your development workflow.",
-        date: "Oct 2024",
-        readTime: "6 min",
-        url: "#",
-      },
-      {
-        title: "The Art of Code Review",
-        excerpt:
-          "Building better software through thoughtful and constructive code reviews.",
-        date: "Sep 2024",
-        readTime: "4 min",
-        url: "#",
-      },
-    ],
   },
   connect: {
     title: "Let's Connect",
@@ -173,11 +177,11 @@ Other tools:  Bitbucket, Kanban and Jira Atlassian.`,
     ],
   },
   footer: {
-    copyright: `© ${CURRENT_YEAR} Willian Leman. All rights reserved.`,
-    builtWith: "Built with Love by Willian Leman",
+    copyright: `© ${CURRENT_YEAR} Willian Lemann. All rights reserved.`,
+    builtWith: "Built with love by Willian Lemann",
   },
   whatsapp: {
     number: "5548991380360",
-    label: "Contrate-me",
+    label: "Hire me",
   },
 };
