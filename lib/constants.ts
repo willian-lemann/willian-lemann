@@ -147,40 +147,6 @@ Other tools:  Bitbucket, Kanban and Jira Atlassian.`,
   },
   thoughts: {
     title: "Recent Thoughts",
-    posts: [
-      {
-        title: "The Future of Web Development",
-        excerpt:
-          "Exploring how AI and automation are reshaping the way we build for the web.",
-        date: "Dec 2024",
-        readTime: "5 min",
-        url: "#",
-      },
-      {
-        title: "Design Systems at Scale",
-        excerpt:
-          "Lessons learned from building and maintaining design systems across multiple products.",
-        date: "Nov 2024",
-        readTime: "8 min",
-        url: "#",
-      },
-      {
-        title: "Performance-First Development",
-        excerpt:
-          "Why performance should be a first-class citizen in your development workflow.",
-        date: "Oct 2024",
-        readTime: "6 min",
-        url: "#",
-      },
-      {
-        title: "The Art of Code Review",
-        excerpt:
-          "Building better software through thoughtful and constructive code reviews.",
-        date: "Sep 2024",
-        readTime: "4 min",
-        url: "#",
-      },
-    ],
   },
   connect: {
     title: "Let's Connect",

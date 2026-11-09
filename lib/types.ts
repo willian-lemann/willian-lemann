@@ -24,14 +24,6 @@ export type Job = {
   tech: string[];
 };
 
-export type Post = {
-  title: string;
-  excerpt: string;
-  date: string;
-  readTime: string;
-  url: string;
-};
-
 export type Social = {
   name: string;
   handle: string;
@@ -63,7 +55,6 @@ export type PageContent = {
   };
   thoughts: {
     title: string;
-    posts: Post[];
   };
   connect: {
     title: string;

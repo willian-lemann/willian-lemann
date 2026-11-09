@@ -4,7 +4,8 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { site } from "@/lib/site";
-import { buildJsonLd } from "@/lib/structured-data";
+import { JsonLd } from "@/components/json-ld";
+import { buildSiteJsonLd } from "@/lib/structured-data";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -33,7 +34,10 @@ export const metadata: Metadata = {
     "AI integrations",
     "Remote Software Engineer",
   ],
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: "/",
+    types: { "application/rss+xml": [{ url: "/blog/feed.xml", title: `${site.name}'s Blog` }] },
+  },
   openGraph: {
     type: "profile",
     url: "/",
@@ -86,12 +90,7 @@ export default function RootLayout({
             __html: "document.documentElement.classList.add('js')",
           }}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(buildJsonLd()).replace(/</g, "\\u003c"),
-          }}
-        />
+        <JsonLd data={buildSiteJsonLd()} />
       </head>
       <body className="font-sans antialiased">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>

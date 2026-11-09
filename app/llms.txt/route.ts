@@ -1,5 +1,7 @@
 import { page, YEARS_OF_EXPERIENCE } from "@/lib/constants";
+import { getAllPosts } from "@/lib/posts";
 import { site } from "@/lib/site";
+import { postUrl } from "@/lib/structured-data";
 
 export const dynamic = "force-static";
 
@@ -18,6 +20,16 @@ export function GET() {
   const faq = page.faq.items
     .map((item) => `### ${item.question}\n\n${item.answer}`)
     .join("\n\n");
+
+  const posts = getAllPosts().filter((post) => !post.draft);
+  const blog = posts.length
+    ? `\n## Blog\n\n${posts
+        .map(
+          (post) =>
+            `- [${post.title}](${postUrl(post.slug)}.md): ${post.description}`,
+        )
+        .join("\n")}\n`
+    : "";
 
   const socials = page.connect.socials
     .map((s) => `- [${s.name}](${s.url}): ${s.handle}`)
@@ -50,9 +62,11 @@ ${jobs}
 
 ${faq}
 
+${blog}
 ## Links
 
 - [Portfolio](${site.url})
+- [Full site content for LLMs](${site.url}/llms-full.txt)
 ${socials}
 `;
 
