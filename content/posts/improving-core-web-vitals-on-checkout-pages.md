@@ -3,7 +3,6 @@ title: "Improving Core Web Vitals on checkout and data-heavy pages"
 description: "What I learned improving LCP, INP and CLS on checkout flows and data-heavy dashboards at Spocket — measuring real users first, taming third-party scripts and treating perceived performance as a feature."
 date: 2026-11-09
 tags: [Performance, Core Web Vitals, React, Shopify]
-draft: true
 ---
 
 **TL;DR:** On checkout and data-heavy pages, the biggest Core Web Vitals wins rarely come from micro-optimizing React. They come from (1) measuring real users instead of trusting Lighthouse, (2) controlling when third-party scripts load, (3) reserving space for everything that loads late, and (4) keeping the main thread free so interactions feel instant. Perceived performance matters as much as the raw numbers.

@@ -3,7 +3,6 @@ title: "Migrating a legacy React + Webpack app to Next.js, one page at a time"
 description: "How we moved Vanhack's platform from a legacy React + Webpack app with a Node.js layer to Next.js incrementally — running both apps side by side, server-side authentication and static regeneration for content pages."
 date: 2026-11-09
 tags: [Next.js, React, Migration, SSR]
-draft: true
 ---
 
 **TL;DR:** Don't rewrite a legacy frontend in one go. Put the new Next.js app in front, migrate page by page, and let every route that hasn't been migrated yet fall through to the legacy app. Use server-side rendering for authenticated pages and static regeneration (ISR) for content pages. Users never see a "big bang" release, and the team keeps shipping features during the migration.

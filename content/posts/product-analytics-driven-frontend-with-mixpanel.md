@@ -3,7 +3,6 @@ title: "Frontend driven by product analytics: building small experiences that mo
 description: "How I work as a frontend engineer when the goal is activation and conversion, not just shipping UI — defining the metric first, typed Mixpanel tracking, small focused experiences and reading the funnel after release."
 date: 2026-11-09
 tags: [Product Analytics, Mixpanel, React, TypeScript]
-draft: true
 ---
 
 **TL;DR:** When the goal is to increase activation and conversion, frontend work starts with the funnel, not with the UI. Define the activation event, instrument the funnel with typed events, ship small focused experiences instead of big redesigns, and decide what to keep by reading the data after release. Treat analytics as part of the feature, not an afterthought.
